@@ -80,7 +80,7 @@ app.post('/v1/chat/completions', async (req, res) => {
       } catch (e) {}
       
       if (!nimModel) {
-        const modelLower = model.toLowerCase();
+        const modelLower = model.LowerCase();
         if (modelLower.includes('gpt-4') || modelLower.includes('claude-opus') || modelLower.includes('405b')) {
           nimModel = 'meta/llama-3.1-405b-instruct';
         } else if (modelLower.includes('claude') || modelLower.includes('gemini') || modelLower.includes('70b')) {
